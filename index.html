@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the cosmos - An interactive journey through space">
+    <title>🚀 Space Explorer | Journey Through the Cosmos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Comet Cursor -->
+    <div class="comet-cursor" id="cometCursor">
+        <div class="comet-head"></div>
+        <div class="comet-tail"></div>
+    </div>
+
+    <!-- Impact Effect Container -->
+    <div class="impact-container" id="impactContainer"></div>
+
+    <!-- Stars Background -->
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="shooting-stars" id="shootingStars"></div>
+
+    <!-- Navigation -->
+    <nav class="cosmic-nav">
+        <div class="nav-logo">
+            <span class="logo-icon">🌌</span>
+            <span class="logo-text">SPACE EXPLORER</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#planets" class="nav-link">Planets</a></li>
+            <li><a href="#missions" class="nav-link">Missions</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="cosmic-btn nav-cta" id="launchBtn">
+            <span class="btn-text">🚀 Launch</span>
+            <span class="btn-glow"></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">EXPLORE THE</span>
+                <span class="title-line gradient-text">INFINITE COSMOS</span>
+            </h1>
+            <p class="hero-subtitle">Embark on an extraordinary journey through galaxies, nebulae, and beyond. Discover the mysteries of the universe.</p>
+            <div class="hero-buttons">
+                <button class="cosmic-btn primary" id="exploreBtn">
+                    <span class="btn-icon">🔭</span>
+                    <span class="btn-text">Start Exploring</span>
+                    <span class="btn-glow"></span>
+                </button>
+                <button class="cosmic-btn secondary" id="learnBtn">
+                    <span class="btn-icon">📚</span>
+                    <span class="btn-text">Learn More</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="planet-orbit">
+                <div class="orbit orbit-1"><div class="orbiting-planet p1">🪐</div></div>
+                <div class="orbit orbit-2"><div class="orbiting-planet p2">🌍</div></div>
+                <div class="orbit orbit-3"><div class="orbiting-planet p3">🌙</div></div>
+                <div class="sun">☀️</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stat-card" data-target="100000000000">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-number" id="stat1">0</div>
+            <div class="stat-label">Stars in Milky Way</div>
+        </div>
+        <div class="stat-card" data-target="8">
+            <div class="stat-icon">🪐</div>
+            <div class="stat-number" id="stat2">0</div>
+            <div class="stat-label">Planets in Solar System</div>
+        </div>
+        <div class="stat-card" data-target="13800000000">
+            <div class="stat-icon">💫</div>
+            <div class="stat-number" id="stat3">0</div>
+            <div class="stat-label">Years Since Big Bang</div>
+        </div>
+        <div class="stat-card" data-target="200000000000">
+            <div class="stat-icon">🌌</div>
+            <div class="stat-number" id="stat4">0</div>
+            <div class="stat-label">Galaxies in Universe</div>
+        </div>
+    </section>
+
+    <!-- Planets Section -->
+    <section id="planets" class="planets-section">
+        <h2 class="section-title">
+            <span class="title-accent">🪐</span>
+            Explore Our Solar System
+        </h2>
+        <div class="planets-grid">
+            <div class="planet-card" data-planet="mercury">
+                <div class="planet-visual">☿️</div>
+                <h3>Mercury</h3>
+                <p>The smallest and fastest planet, orbiting closest to the Sun.</p>
+                <div class="planet-stats">
+                    <span>🌡️ 430°C</span>
+                    <span>📏 4,879 km</span>
+                </div>
+                <button class="cosmic-btn planet-btn">Explore</button>
+            </div>
+            <div class="planet-card" data-planet="venus">
+                <div class="planet-visual">🌕</div>
+                <h3>Venus</h3>
+                <p>Earth's twin with a toxic atmosphere and extreme temperatures.</p>
+                <div class="planet-stats">
+                    <span>🌡️ 465°C</span>
+                    <span>📏 12,104 km</span>
+                </div>
+                <button class="cosmic-btn planet-btn">Explore</button>
+            </div>
+            <div class="planet-card" data-planet="earth">
+                <div class="planet-visual">🌍</div>
+                <h3>Earth</h3>
+                <p>Our home planet, the only known world with life.</p>
+                <div class="planet-stats">
+                    <span>🌡️ 15°C</span>
+                    <span>📏 12,742 km</span>
+                </div>
+                <button class="cosmic-btn planet-btn">Explore</button>
+            </div>
+            <div class="planet-card" data-planet="mars">
+                <div class="planet-visual">🔴</div>
+                <h3>Mars</h3>
+                <p>The Red Planet, humanity's next frontier for exploration.</p>
+                <div class="planet-stats">
+                    <span>🌡️ -60°C</span>
+                    <span>📏 6,779 km</span>
+                </div>
+                <button class="cosmic-btn planet-btn">Explore</button>
+            </div>
+            <div class="planet-card" data-planet="jupiter">
+                <div class="planet-visual">🟤</div>
+                <h3>Jupiter</h3>
+                <p>The largest planet with the famous Great Red Spot storm.</p>
+                <div class="planet-stats">
+                    <span>🌡️ -110°C</span>
+                    <span>📏 139,820 km</span>
+                </div>
+                <button class="cosmic-btn planet-btn">Explore</button>
+            </div>
+            <div class="planet-card" data-planet="saturn">
+                <div class="planet-visual">🪐</div>
+                <h3>Saturn</h3>
+                <p>Famous for its stunning ring system made of ice and rock.</p>
+                <div class="planet-stats">
+                    <span>🌡️ -140°C</span>
+                    <span>📏 116,460 km</span>
+                </div>
+                <button class="cosmic-btn planet-btn">Explore</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions Section -->
+    <section id="missions" class="missions-section">
+        <h2 class="section-title">
+            <span class="title-accent">🛸</span>
+            Space Missions
+        </h2>
+        <div class="mission-timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">🚀</div>
+                <div class="timeline-content">
+                    <h3>Apollo 11</h3>
+                    <span class="timeline-date">1969</span>
+                    <p>First humans land on the Moon. "One small step for man..."</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">🛰️</div>
+                <div class="timeline-content">
+                    <h3>Voyager 1</h3>
+                    <span class="timeline-date">1977</span>
+                    <p>The farthest human-made object from Earth, still sending data.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">🔭</div>
+                <div class="timeline-content">
+                    <h3>Hubble Space Telescope</h3>
+                    <span class="timeline-date">1990</span>
+                    <p>Revolutionary views of deep space that changed astronomy.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">🤖</div>
+                <div class="timeline-content">
+                    <h3>Mars Curiosity Rover</h3>
+                    <span class="timeline-date">2012</span>
+                    <p>Exploring Mars surface and searching for signs of ancient life.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">✨</div>
+                <div class="timeline-content">
+                    <h3>James Webb Space Telescope</h3>
+                    <span class="timeline-date">2021</span>
+                    <p>The most powerful space telescope ever built, peering into cosmic dawn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Galaxy Map -->
+    <section id="gallery" class="gallery-section">
+        <h2 class="section-title">
+            <span class="title-accent">🌌</span>
+            Cosmic Gallery
+        </h2>
+        <div class="galaxy-grid">
+            <div class="galaxy-card" data-name="Andromeda">
+                <div class="galaxy-image">🌀</div>
+                <div class="galaxy-info">
+                    <h3>Andromeda Galaxy</h3>
+                    <p>2.5 million light-years away</p>
+                </div>
+            </div>
+            <div class="galaxy-card" data-name="Whirlpool">
+                <div class="galaxy-image">🌊</div>
+                <div class="galaxy-info">
+                    <h3>Whirlpool Galaxy</h3>
+                    <p>23 million light-years away</p>
+                </div>
+            </div>
+            <div class="galaxy-card" data-name="Sombrero">
+                <div class="galaxy-image">🎩</div>
+                <div class="galaxy-info">
+                    <h3>Sombrero Galaxy</h3>
+                    <p>28 million light-years away</p>
+                </div>
+            </div>
+            <div class="galaxy-card" data-name="Triangulum">
+                <div class="galaxy-image">🔺</div>
+                <div class="galaxy-info">
+                    <h3>Triangulum Galaxy</h3>
+                    <p>2.7 million light-years away</p>
+                </div>
+            </div>
+            <div class="galaxy-card featured" data-name="Milky Way">
+                <div class="galaxy-image">🌌</div>
+                <div class="galaxy-info">
+                    <h3>Milky Way</h3>
+                    <p>Our home galaxy</p>
+                </div>
+            </div>
+            <div class="galaxy-card" data-name="Cartwheel">
+                <div class="galaxy-image">🎡</div>
+                <div class="galaxy-info">
+                    <h3>Cartwheel Galaxy</h3>
+                    <p>500 million light-years away</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space Facts Carousel -->
+    <section class="facts-section">
+        <h2 class="section-title">
+            <span class="title-accent">💡</span>
+            Amazing Space Facts
+        </h2>
+        <div class="facts-carousel">
+            <div class="fact-card active">
+                <div class="fact-icon">🌟</div>
+                <p>A day on Venus is longer than its year!</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">🌑</div>
+                <p>There are more stars in space than grains of sand on Earth.</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">🚀</div>
+                <p>Light from the Sun takes 8 minutes to reach Earth.</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">⚫</div>
+                <p>A black hole can fit millions of Earths inside it.</p>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">🌡️</div>
+                <p>Space is completely silent - there's no medium for sound to travel.</p>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" id="prevFact">◀</button>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button class="carousel-btn next" id="nextFact">▶</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">
+            <span class="title-accent">📡</span>
+            Contact Mission Control
+        </h2>
+        <div class="contact-container">
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Astronaut Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <span class="input-glow"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Communication Frequency</label>
+                    <input type="email" id="email" placeholder="your.email@galaxy.com" required>
+                    <span class="input-glow"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Transmission Message</label>
+                    <textarea id="message" placeholder="Type your message to mission control..." rows="5" required></textarea>
+                    <span class="input-glow"></span>
+                </div>
+                <button type="submit" class="cosmic-btn primary submit-btn">
+                    <span class="btn-icon">📡</span>
+                    <span class="btn-text">Send Transmission</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </form>
+            <div class="contact-visual">
+                <div class="satellite">🛰️</div>
+                <div class="signal-waves">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cosmic-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">🌌</span>
+                <span class="logo-text">SPACE EXPLORER</span>
+                <p>Exploring the cosmos, one star at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#planets">Planets</a>
+                <a href="#missions">Missions</a>
+                <a href="#gallery">Gallery</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <button class="social-btn">🐦</button>
+                    <button class="social-btn">📸</button>
+                    <button class="social-btn">🎬</button>
+                    <button class="social-btn">🔗</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Space Explorer. Made with 💜 for the universe.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Planet Details -->
+    <div class="modal" id="planetModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-planet-visual" id="modalPlanetVisual">🌍</div>
+            <h2 id="modalPlanetName">Planet Name</h2>
+            <div class="modal-details" id="modalDetails"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
